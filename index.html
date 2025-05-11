@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Futbol Rankings App</title>
+  <title>Fútbol Rankings App</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #00FF88; /* Verde brillante */
-      color: #2B0033;      /* Violeta oscuro */
+      background: #00FF88;
+      color: #2B0033;
       margin: 0;
       text-align: center;
     }
@@ -69,15 +69,15 @@
 <body>
 
 <header>
-  <img src="logo.png" alt="Logo Futbol Rankings App" />
-  <h1>Futbol Rankings App</h1>
-  <p>Predicciones automáticas y resultados de fútbol en tiempo real</p>
+  <img src="logo.png" alt="Logo Fútbol Rankings App" />
+  <h1>Fútbol Rankings App</h1>
+  <p>Predicciones automáticas y resultados en tiempo real</p>
 </header>
 
 <section>
   <img src="banner.png" class="banner" alt="Banner principal" />
   <h2>¡Convierte estadísticas en decisiones ganadoras!</h2>
-  <p>Automatiza tu estrategia con datos, rankings y predicciones en vivo conectadas a Supabase.</p>
+  <p>Automatiza tu estrategia con datos, rankings y predicciones conectadas a Supabase.</p>
   <a class="cta" href="https://wa.me/593958757302" target="_blank">💬 Contáctanos por WhatsApp</a>
 </section>
 
@@ -99,16 +99,25 @@ fetch("resultados_validados.json")
       grupos[grupo].push(p);
       p.acierto ? resumen.aciertos++ : resumen.errores++;
     });
+
     document.getElementById("resumen-aciertos").textContent =
       `✅ Aciertos: ${resumen.aciertos} | ❌ Errores: ${resumen.errores}`;
+
     let html = "";
     for (const liga in grupos) {
       html += `<h3>${liga}</h3><table><tr><th>Fecha</th><th>Partido</th><th>Marcador</th><th>Predicción</th><th>Resultado</th></tr>`;
       grupos[liga].forEach(p => {
-        html += `<tr><td>${p.fecha}</td><td>${p.local} vs ${p.visitante}</td><td>${p.marcador_real}</td><td>${p.prediccion}</td><td>${p.acierto ? "✅" : "❌"}</td></tr>`;
+        html += `<tr>
+          <td>${p.fecha}</td>
+          <td>${p.local} vs ${p.visitante}</td>
+          <td>${p.marcador_real}</td>
+          <td>${p.prediccion}</td>
+          <td>${p.acierto ? "✅" : "❌"}</td>
+        </tr>`;
       });
       html += "</table><br>";
     }
+
     document.getElementById("tabla-resultados").innerHTML = html;
   });
 </script>
