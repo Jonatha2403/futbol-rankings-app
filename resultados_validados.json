@@ -1,0 +1,62 @@
+[
+  {
+    "fecha": "2025-05-09",
+    "pais": "España",
+    "liga": "La Liga",
+    "local": "Barcelona",
+    "visitante": "Real Madrid",
+    "marcador_real": "2-1",
+    "prediccion": "2-1",
+    "acierto": true
+  },
+  {
+    "fecha": "2025-05-09",
+    "pais": "España",
+    "liga": "La Liga",
+    "local": "Sevilla",
+    "visitante": "Valencia",
+    "marcador_real": "1-1",
+    "prediccion": "2-0",
+    "acierto": false
+  },
+  {
+    "fecha": "2025-05-09",
+    "pais": "Inglaterra",
+    "liga": "Premier League",
+    "local": "Arsenal",
+    "visitante": "Liverpool",
+    "marcador_real": "1-2",
+    "prediccion": "2-1",
+    "acierto": false
+  },
+  {
+    "fecha": "2025-05-10",
+    "pais": "Inglaterra",
+    "liga": "Premier League",
+    "local": "Chelsea",
+    "visitante": "Manchester City",
+    "marcador_real": "0-0",
+    "prediccion": "1-1",
+    "acierto": true
+  },
+  {
+    "fecha": "2025-05-10",
+    "pais": "Italia",
+    "liga": "Serie A",
+    "local": "Juventus",
+    "visitante": "Milan",
+    "marcador_real": "1-2",
+    "prediccion": "1-2",
+    "acierto": true
+  },
+  {
+    "fecha": "2025-05-10",
+    "pais": "Italia",
+    "liga": "Serie A",
+    "local": "Roma",
+    "visitante": "Napoli",
+    "marcador_real": "2-3",
+    "prediccion": "2-2",
+    "acierto": false
+  }
+]

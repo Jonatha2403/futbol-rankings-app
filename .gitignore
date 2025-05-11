@@ -1,0 +1,26 @@
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos y carpetas de Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+*.pyo
+*.pyd
+.env
+.venv/
+*.sqlite3
+*.log
+
+# Entornos y caché de Jupyter o Spyder
+.ipynb_checkpoints/
+.spyder-py3/
+.virtual_documents/
+.anaconda/
+
+# IDE y configuración local
+.vscode/
+.streamlit/
