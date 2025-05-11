@@ -6,63 +6,71 @@
   <title>Fútbol Rankings App</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #00FF88;
-      color: #2B0033;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0f7fa;
       margin: 0;
+      padding: 0;
       text-align: center;
     }
     header {
-      background: #2B0033;
+      background: rgba(0, 0, 0, 0.85);
       padding: 20px;
     }
     header img {
       height: 100px;
       border-radius: 50%;
-      border: 4px solid #ffffff;
-      background-color: #00FF88;
+      border: 4px solid #00e676;
+      background-color: #0b2e3b;
+    }
+    h1, h2 {
+      color: #00e676;
+      margin: 10px 0;
+    }
+    p {
+      margin: 5px 0 15px 0;
     }
     .banner {
       width: 90%;
       max-width: 900px;
-      border-radius: 12px;
-      margin-top: 20px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.4);
-    }
-    h1, h2 {
-      color: #2B0033;
+      margin: 30px auto;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
     }
     .cta {
-      background: #2B0033;
-      color: #ffffff;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 6px;
+      background-color: #00e676;
+      color: #003300;
+      padding: 14px 28px;
+      font-size: 16px;
       font-weight: bold;
-      margin-top: 20px;
+      border-radius: 8px;
+      text-decoration: none;
       display: inline-block;
+      margin-top: 20px;
     }
     .cta:hover {
-      background: #1A001F;
+      background-color: #00c46a;
+    }
+    section {
+      background-color: rgba(0, 0, 0, 0.8);
+      margin: 30px auto;
+      padding: 40px 20px;
+      border-radius: 12px;
+      max-width: 1000px;
     }
     table {
-      border-collapse: collapse;
-      margin: auto;
+      width: 100%;
       margin-top: 20px;
-      width: 90%;
-      max-width: 800px;
-      background-color: #ffffff;
-      color: #2B0033;
+      border-collapse: collapse;
+      color: #e0f7fa;
     }
-    table, th, td {
-      border: 1px solid #2B0033;
+    th, td {
+      padding: 10px;
+      border: 1px solid #00e676;
     }
     th {
-      background-color: #2B0033;
-      color: #ffffff;
-    }
-    td {
-      padding: 8px;
+      background-color: #004d40;
     }
   </style>
 </head>
@@ -71,17 +79,17 @@
 <header>
   <img src="logo.png" alt="Logo Fútbol Rankings App" />
   <h1>Fútbol Rankings App</h1>
-  <p>Predicciones automáticas y resultados en tiempo real</p>
+  <p>Predicciones automáticas y resultados verificados de fútbol en tiempo real</p>
 </header>
 
 <section>
   <img src="banner.png" class="banner" alt="Banner principal" />
   <h2>¡Convierte estadísticas en decisiones ganadoras!</h2>
-  <p>Automatiza tu estrategia con datos, rankings y predicciones conectadas a Supabase.</p>
+  <p>Automatiza tu estrategia con rankings, predicciones y validaciones en Supabase.</p>
   <a class="cta" href="https://wa.me/593958757302" target="_blank">💬 Contáctanos por WhatsApp</a>
 </section>
 
-<section id="resultados" style="padding: 40px 20px;">
+<section id="resultados">
   <h2>📊 Resultados de los últimos 3 días</h2>
   <p id="resumen-aciertos" style="font-weight: bold;"></p>
   <div id="tabla-resultados"></div>
@@ -105,7 +113,10 @@ fetch("resultados_validados.json")
 
     let html = "";
     for (const liga in grupos) {
-      html += `<h3>${liga}</h3><table><tr><th>Fecha</th><th>Partido</th><th>Marcador</th><th>Predicción</th><th>Resultado</th></tr>`;
+      html += `<h3 style="color:#00e676;">${liga}</h3>
+        <table><tr>
+        <th>Fecha</th><th>Partido</th><th>Marcador</th><th>Predicción</th><th>Resultado</th>
+        </tr>`;
       grupos[liga].forEach(p => {
         html += `<tr>
           <td>${p.fecha}</td>
@@ -115,7 +126,7 @@ fetch("resultados_validados.json")
           <td>${p.acierto ? "✅" : "❌"}</td>
         </tr>`;
       });
-      html += "</table><br>";
+      html += `</table><br>`;
     }
 
     document.getElementById("tabla-resultados").innerHTML = html;
